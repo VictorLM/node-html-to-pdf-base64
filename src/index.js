@@ -18,10 +18,10 @@ app.post('/', async (req, res) => {
     return;
   }
 
-  const pdfBuffer = await htmlToPDF(html);
+  const pdfBase64 = await htmlToPDF(html);
 
   res.contentType('application/pdf');
-  res.send(pdfBuffer);
+  res.send(pdfBase64);
 });
 
 app.listen(port, () => {
